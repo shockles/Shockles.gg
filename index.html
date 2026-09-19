@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shockles — CS2 & Gaming Content</title>
 <meta name="description" content="Shockles is a shooter content creator. Counter-Strike 2, Valorant, and general gaming from California. Watch on YouTube.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shockles — CS2 & Gaming">
+<meta property="og:description" content="Just a gamer. CS2, Valorant and off-rotators from California. Watch the clips on YouTube.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://shockles.gg/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shockles — CS2 & Gaming">
+<meta name="twitter:description" content="Just a gamer. CS2, Valorant and off-rotators from California.">
+<meta name="twitter:image" content="og-image.png">
+<link rel="icon" href="favicon-32.png" sizes="any" type="image/png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +24,6 @@
 
 <style>
 :root{
-  /* tokens */
   --bg:#0b0d11;
   --bg-2:#10141c;
   --surface:#141a24;
@@ -24,7 +35,6 @@
   --line-strong:#303b4e;
   --accent:#9d5df6;
   --accent-soft:rgba(157,93,246,.12);
-  --enemy:#ff5a5a;
   --glow:rgba(157,93,246,.28);
   --radius:10px;
   --radius-sm:6px;
@@ -34,61 +44,30 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  color:var(--ink);
+  background:var(--bg);color:var(--ink);
   font-family:'Space Grotesk',system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  line-height:1.5;
-  overflow-x:hidden;
-  min-height:100vh;
+  -webkit-font-smoothing:antialiased;line-height:1.5;
+  overflow-x:hidden;min-height:100vh;
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:3px;
-  border-radius:var(--radius-sm);
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius-sm);
 }
-h1,h2,h3,.display{
-  font-family:'Chakra Petch',system-ui,sans-serif;
-}
+h1,h2,h3,.display{font-family:'Chakra Petch',system-ui,sans-serif}
 ::selection{background:var(--accent);color:var(--bg)}
-
-/* ---------- HUD / scanline overlay (toggle) ---------- */
-.hud-grid{
-  position:fixed;inset:0;pointer-events:none;z-index:5;
-  opacity:0;transition:opacity .45s ease;
-}
-.hud-grid::before{
-  content:"";position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(157,93,246,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(157,93,246,.05) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:radial-gradient(ellipse at 50% 20%,#000 0%,transparent 78%);
-}
-.hud-grid::after{
-  content:"";position:absolute;inset:0;
-  background-image:repeating-linear-gradient(
-    to bottom,
-    rgba(157,93,246,.04) 0 1px,
-    transparent 1px 3px
-  );
-}
-body.hud-on .hud-grid{opacity:1}
 
 /* ---------- top bar ---------- */
 .top{
   position:sticky;top:0;z-index:20;
   background:color-mix(in oklab, var(--bg) 88%, transparent);
-  backdrop-filter:none;
-  border-bottom:1px solid var(--line);
+  backdrop-filter:none;border-bottom:1px solid var(--line);
 }
 .top .wrap{
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
   max-width:var(--maxw);margin:0 auto;padding:14px 22px;
 }
-.brand{display:inline-flex;align-items:center;gap:.6rem;font-family:'Chakra Petch';font-weight:800;letter-spacing:.12em;font-size:1.15rem}
+.brand{display:inline-flex;align-items:center;gap:.01em;font-family:'Chakra Petch';font-weight:800;letter-spacing:.12em;font-size:1.15rem}
 .mark{width:1.2rem;height:1.2rem;color:var(--accent);display:inline-block;flex:0 0 auto}
 .links{display:flex;gap:.2rem}
 .links a{
@@ -98,7 +77,6 @@ body.hud-on .hud-grid{opacity:1}
   min-height:44px;transition:color .18s,border-color .18s,transform .18s;
 }
 .links a:hover{color:var(--ink);border-color:var(--accent);transform:translateY(-1px)}
-.links a .ic{margin-right:.4rem;display:inline-block}
 
 /* ---------- layout ---------- */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
@@ -118,7 +96,7 @@ section:first-of-type{padding-top:64px}
 /* ---------- hero ---------- */
 .hero{padding-top:80px;padding-bottom:20px}
 .hero-grid{
-  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);
   align-items:center;
 }
 .eyebrow{
@@ -128,13 +106,30 @@ section:first-of-type{padding-top:64px}
 }
 .eyebrow::before{content:"";width:1.4rem;height:2px;background:var(--accent)}
 .wordmark{
+  display:inline-flex;align-items:center;
   font-size:clamp(3rem,10vw,7.4rem);line-height:.88;letter-spacing:.01em;
   font-weight:800;text-transform:uppercase;
 }
+.wordmark .wl,.wordmark .wr{font-family:inherit;font-weight:inherit;letter-spacing:inherit;text-transform:inherit}
 .wordmark .reticle-o{
-  display:inline-block;width:.86em;height:.86em;
-  vertical-align:-.06em;color:var(--accent);
+  display:inline-block;width:1em;height:1em;flex:0 0 auto;color:var(--accent);
+  transition:transform .25s cubic-bezier(.22,1,.36,1),filter .25s;
+  cursor:default;
 }
+.wordmark .reticle-o:hover{
+  transform:scale(1.35);
+  filter:drop-shadow(0 0 8px var(--glow)) drop-shadow(0 0 16px var(--glow));
+}
+.wordmark .reticle-o svg{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.wordmark .reticle-o:hover svg{transform:rotate(45deg)}
+
+.top .brand .reticle-o{
+  color:var(--accent);
+  transform:translateY(14%) rotate(0deg);
+  transition:transform .25s cubic-bezier(.22,1,.36,1),filter .25s;
+}
+.top .brand .reticle-o svg{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.top .brand .reticle-o:hover svg{transform:rotate(45deg)}
 .tagline{
   margin-top:1.4rem;font-size:clamp(1rem,2vw,1.2rem);
   color:var(--ink-mut);max-width:46ch;line-height:1.55;
@@ -149,16 +144,9 @@ section:first-of-type{padding-top:64px}
   cursor:pointer;border:1px solid var(--line);
 }
 .btn:active{transform:translateY(1px) scale(.995)}
-.btn-primary{
-  background:var(--accent);color:#101318;border-color:var(--accent);
-}
-.btn-primary:hover{
-  background:#d8ff45;box-shadow:0 10px 30px -8px var(--glow);
-  transform:translateY(-2px);
-}
-.btn-ghost{
-  color:var(--ink-mut);border-color:var(--line);
-}
+.btn-primary{background:var(--accent);color:#101318;border-color:var(--accent)}
+.btn-primary:hover{background:#d8ff45;box-shadow:0 10px 30px -8px var(--glow);transform:translateY(-2px)}
+.btn-ghost{color:var(--ink-mut);border-color:var(--line)}
 .btn-ghost:hover{color:var(--ink);border-color:var(--accent)}
 .hero-meta{
   display:flex;gap:.5rem;flex-wrap:wrap;margin-top:2rem;
@@ -170,18 +158,41 @@ section:first-of-type{padding-top:64px}
 @keyframes blink{50%{opacity:.3}}
 
 /* hero media card */
-.hero-media{position:relative}
+.hero-media{
+  position:relative;
+  transition:transform .22s;
+}
 .video-card{
-  position:relative;border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;background:var(--surface);
-  display:flex;flex-direction:column;
+  position:relative;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;background:var(--surface);
+}
+.video-card::before{
+  content:"";position:absolute;inset:-3px;border-radius:calc(var(--radius) + 3px);
+  background:var(--accent);
+  z-index:-1;opacity:0;transition:opacity .3s,transform .45s cubic-bezier(.22,1,.36,1);
+  transform:scale(.96);filter:blur(10px);
+}
+.video-card:hover::before{opacity:1;transform:scale(1)}
+.video-card:hover{
+  transform:translateY(-3px);
 }
 .video-card img{
   width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
-  transform:scale(1.0);
-  transition:transform .5s cubic-bezier(.16,.8,.3,1);
+  transform:scale(1.0);transition:transform .4s cubic-bezier(.22,1,.36,1);
 }
-.video-card:hover img{transform:scale(1.045)}
+.video-card:hover img{
+  transform:scale(1.1);
+  filter:hue-rotate(10deg) saturate(1.1);
+}
+.video-card:hover{
+  box-shadow:0 0 20px 4px rgba(157,93,246,.4),0 0 40px 10px rgba(157,93,246,.2);
+  animation:cardGlow 3s ease-in-out infinite alternate;
+}
+@keyframes cardGlow{
+  0%{box-shadow:0 0 12px 2px rgba(157,93,246,.25),0 0 24px 6px rgba(157,93,246,.1)}
+  100%{box-shadow:0 0 20px 4px rgba(157,93,246,.4),0 0 40px 10px rgba(157,93,246,.2)}
+}
 .video-card .badge{
   position:absolute;top:12px;left:12px;
   font-family:'Chakra Petch';font-size:.7rem;font-weight:800;letter-spacing:.16em;
@@ -193,76 +204,54 @@ section:first-of-type{padding-top:64px}
 .card-body p{color:var(--ink-mut);font-size:.86rem;margin-top:.2rem;font-family:'Chakra Petch';letter-spacing:.04em}
 .card-cta{
   position:absolute;inset:0;display:grid;place-items:center;
-  color:var(--ink);background:rgba(9,11,15,.42);
-  opacity:0;transition:opacity .25s;cursor:pointer;
-  border-radius:var(--radius);
+  color:var(--ink);opacity:0;transition:opacity .25s;cursor:pointer;border-radius:var(--radius);
 }
 .video-card:hover .card-cta,.video-card:focus-within .card-cta{opacity:1}
 .card-cta span{
   font-family:'Chakra Petch';font-weight:700;font-size:.8rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--accent);
+  text-transform:uppercase;color:var(--bg);
   display:inline-flex;align-items:center;gap:.5rem;
-  padding:.6rem 1rem;border:1px solid var(--accent);border-radius:var(--radius-sm);
+  padding:.6rem 1rem;border:none;border-radius:var(--radius-sm);
   transition:background .18s;
+  background:var(--accent);
 }
 .card-cta span:hover{background:var(--accent-soft)}
-/* aiming reticle on hover */
 .aim{
   position:absolute;top:50%;left:50%;width:74px;height:74px;
-  translate:-50% -50%;
-  opacity:0;transform:scale(.6) rotate(0deg);
-  transition:opacity .28s,transform .38s;
-  pointer-events:none;color:var(--accent);
+  translate:-50% -50%;opacity:0;transform:scale(.6) rotate(0deg);
+  transition:opacity .28s,transform .38s;pointer-events:none;color:var(--accent);
 }
 .video-card:hover .aim{opacity:.95;transform:scale(1) rotate(90deg)}
-.play{
-  position:absolute;inset:0;display:grid;place-items:center;
-  background:transparent;
-}
-.play span{
-  width:54px;height:54px;border-radius:50%;
-  display:grid;place-items:center;
-  border:2px solid var(--ink);background:rgba(11,13,17,.6);
-  color:var(--ink);font-size:1rem;
-}
 
 /* ---------- rails ---------- */
 .rail{display:grid;gap:14px}
 .rail-videos{grid-template-columns:repeat(auto-fill,minmax(238px,1fr))}
-.rail-games{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 .rail .card{
   position:relative;border:1px solid var(--line);border-radius:var(--radius);
   overflow:hidden;background:var(--surface);
   transition:transform .22s,border-color .22s,box-shadow .22s;
 }
-.rail .card:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:0 12px 26px -14px rgba(0,0,0,.7)}
+.rail .card::before{
+  content:"";position:absolute;inset:-3px;border-radius:calc(var(--radius) + 3px);
+  background:var(--accent);
+  z-index:-1;opacity:0;transition:opacity .3s,transform .45s cubic-bezier(.22,1,.36,1);
+  transform:scale(.96);filter:blur(10px);
+}
+.rail .card:hover::before{opacity:1;transform:scale(1)}
+.rail .card:hover{transform:scale(1.08) translateY(-3px) hue-rotate(10deg) saturate(1.1);border-color:var(--accent);box-shadow:0 0 22px 6px rgba(157,93,246,.5),0 0 44px 12px rgba(157,93,246,.2)}
 .rail-videos .card{cursor:pointer}
-.rail-games .card{cursor:default}
 .rail .card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .45s}
-.rail-videos .card:hover img{transform:scale(1.05)}
+.rail-videos .card:hover img{transform:scale(1.08);filter:hue-rotate(10deg) saturate(1.1)}
 .rail-videos .card .num{
   position:absolute;top:10px;left:10px;
   font-family:'Chakra Petch';font-weight:800;font-size:.7rem;letter-spacing:.14em;
   color:var(--bg);background:var(--accent);padding:3px 8px;border-radius:4px;
 }
-.rail-videos .card figcaption{padding:13px 15px 15px}
+.rail-videos .card figcaption{padding:13px 15px 15px;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.rail-videos .card:hover figcaption{transform:scale(1.08)}
 .rail-videos .card figcaption h3{font-size:.98rem;font-weight:700;letter-spacing:.02em;line-height:1.25}
 .rail-videos .card figcaption p{color:var(--ink-mut);font-size:.78rem;margin-top:.25rem;font-family:'Chakra Petch';letter-spacing:.03em}
-.rail-videos .card .num.enemy{background:var(--enemy)}
 
-/* game cards */
-.rail-games .card{padding:16px 16px 18px}
-.rail-games .card h3{
-  font-size:.95rem;font-weight:700;letter-spacing:.03em;line-height:1.3;
-}
-.rail-games .card .g-tag{
-  margin-top:.5rem;font-size:.66rem;font-family:'Chakra Petch';font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
-}
-.rail-games .card .g-hrs{
-  margin-top:.45rem;font-size:.82rem;color:var(--ink-mut);font-family:'Chakra Petch';
-}
-.rail-games .card .g-hrs b{color:var(--ink)}
 
 /* ---------- about ---------- */
 .about{padding-top:80px;padding-bottom:90px}
@@ -272,8 +261,7 @@ section:first-of-type{padding-top:64px}
 .about p{color:var(--ink-mut);font-size:1.02rem;max-width:52ch;line-height:1.7}
 .about p b{color:var(--ink);font-weight:700}
 .about .side{
-  border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;
-  background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;background:var(--surface);
 }
 .about .side .row{
   display:flex;justify-content:space-between;gap:1rem;
@@ -287,11 +275,8 @@ section:first-of-type{padding-top:64px}
 
 /* ---------- connect ---------- */
 .connect{padding-top:40px;padding-bottom:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.connect h2{
-  font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;text-transform:uppercase;
-  letter-spacing:.04em;margin-bottom:26px;
-}
-.connect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.connect h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:26px}
+.connect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .connect .soc{
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
   border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
@@ -301,10 +286,6 @@ section:first-of-type{padding-top:64px}
 .connect .soc:hover{border-color:var(--accent);transform:translateY(-3px);background:var(--surface-2)}
 .connect .soc .s-label{font-family:'Chakra Petch';font-weight:700;font-size:1rem;letter-spacing:.04em}
 .connect .soc .s-sub{font-size:.78rem;color:var(--ink-mut);font-family:'Chakra Petch';letter-spacing:.04em;margin-top:2px}
-.connect .soc .s-ic{width:1.9rem;height:1.9rem;color:var(--accent);flex:0 0 auto}
-.connect .soc.you .s-ic{color:var(--accent)}
-.connect .soc.ste .s-ic{color:#e8edf2}
-.connect .soc.x .s-ic{color:var(--ink)}
 .connect .soc .arr{color:var(--ink-faint);transition:transform .2s}
 .connect .soc:hover .arr{transform:translateX(4px);color:var(--accent)}
 
@@ -332,31 +313,12 @@ footer{padding:30px 0}
   .hero-meta .dot{animation:none}
 }
 
-/* ---------- tweaks ---------- */
-.tweaks{
-  position:fixed;left:18px;bottom:18px;z-index:30;
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--radius-sm);padding:8px;color:var(--ink-mut);
-  display:flex;align-items:center;gap:6px;cursor:pointer;
-  font-family:'Chakra Petch';font-size:.66rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;min-height:44px;
-  transition:color .18s,border-color .18s,transform .18s;
-}
-.tweaks:hover,.tweaks:focus-visible{color:var(--accent);border-color:var(--accent)}
-.tweaks .gear{width:16px;height:16px;transition:transform .4s}
-.tweaks.open .gear{transform:rotate(180deg);color:var(--accent)}
-.tweaks-panel{
-  position:fixed;left:18px;bottom:74px;z-index:30;
-  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:10px 14px;display:flex;flex-direction:column;gap:10px;
-  opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s,transform .25s;
-}
-.tweaks-panel.open{opacity:1;transform:translateY(0);pointer-events:auto}
-.tweaks-panel label{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;font-family:'Chakra Petch';font-size:.78rem;font-weight:600;letter-spacing:.04em;cursor:pointer}
-.switch{width:34px;height:20px;border-radius:10px;background:var(--line);position:relative;flex:0 0 auto}
-.switch::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--ink-mut);transition:transform .25s,background .25s}
-.switch.on{background:var(--accent-soft);border:1px solid var(--accent)}
-.switch.on::after{transform:translateX(14px);background:var(--accent)}
+/* ---------- rank plate ---------- */
+.rank-plate{display:inline-flex;align-items:center;gap:.45rem;
+  border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);
+  padding:.35rem .65rem;margin-top:.7rem;
+  font-family:'Chakra Petch';font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mut)}
+.rank-plate .rk{color:var(--accent)}
 
 /* ---------- responsive ---------- */
 @media (max-width:860px){
@@ -376,49 +338,26 @@ footer{padding:30px 0}
 </head>
 <body>
 
-<div class="hud-grid" aria-hidden="true"></div>
-
-<!-- top bar -->
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">
-      <svg class="mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
-        <circle cx="16" cy="16" r="9" stroke-width="1.6"/>
-        <path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31" stroke-width="1.6"/>
-      </svg>
-      SHOCKLES
+    <a class="brand" href="#top" style="gap:.12em">
+      <span class="wl">SH</span><span class="reticle-o"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width:1em;height:1em;display:inline-block" aria-hidden="true"><circle cx="16" cy="16" r="9" stroke-width="2"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31" stroke-width="2"/></svg></span><span class="wr">CKLES</span>
     </a>
     <nav class="links">
-      <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">
-        <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M10 8l6 4 6-4 6-4 6 4 6 4z"/><circle cx="12" cy="12" r="0.01"/></svg>
-        YouTube
-      </a>
-      <a href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">
-        <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 13c0 3.1 1.9 5.8 4.7 7l.8.2c3.6 1.6 7.2 1.7 10.8.1l.7-.2C19.5 18.8 21.5 16.1 21.5 13c0-1.5-.5-2.9-1.4-3.9-.3-.4-.6-.8-1-1.2h-1.3c.6-.7 1-1.7 1-2.8A4.6 4.6 0 10 8 2.6c-.8.6-1.2 1.4-1.2 2.3 0 .7.2 1.5.6 2H2.5C1.4 14.1 1 14.9 1 13z M5.7 4.5A2.8 2.8 0 018 2.6c.6 0 1.2.3 1.6.7l-.7.7c-.3-.1-.6-.2-1-.2h-1.1c-.2 1.3-1.4 1.9-2.4 1.9z"/></svg>
-        Steam
-      </a>
-      <a href="https://x.com/ItsShockles" target="_blank" rel="noopener">
-        <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 4.8c-.9.5-1.9 1.3-2.4 2.1L11.9 9l-2 4.8c-.5 1.4-1.2 2.5-2.1 3.3l-.7.9c-.1.1-.3.1-.4 0L5.9 18.8c-1.1-.6-1.9-1.6-2.1-2.7l-.2-1.2c-.1-.4.1-.8.4-1l7.5-7.8 8.3 10.8.4 0c.3-.5.7-1 1.1-1.6.4-.5.6-1 1-1.8.3-.8.4-1.7.2-2.5-.4-1.2-1.3-2.2-2.4-2.5l-1-.3-.1.1c.8.8 1.4 1.7 1.4 2.7v1.1c-5-2.9-10-2.9-15 .1 1.2 1.3 2.2 2.9 2.2 4.8l1 .1c.8 0 1.6-.2 2.2-.7.7-.6 1.3-1.3 1.8-2.2l1.6-2.8.9.1 5.9 7.7h.7l.3-.1c.7-.9 1.3-2 1.5-3.1.5-2.4-.1-5.2-1.9-7.1l-.7-.9c.2 0 .5.1.7.2.7.3 1.4.6 1.9 1.2.6.6 1.1 1.4 1.3 2.3.2.9.2 1.8 0 2.7l-.3.7h-.7z"/></svg>
-        X
-      </a>
+      <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">Twitch</a>
+      <a href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">Steam</a>
+      <a href="https://x.com/ItsShockles" target="_blank" rel="noopener">X</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="hero" id="top" aria-label="Shockles">
     <div class="wrap">
       <div class="hero-grid">
         <div class="rv">
-          <p class="eyebrow">CS2 · Shooter Content</p>
-          <h1 class="wordmark">SH<span class="reticle-o">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width:100%;height:100%;display:block" aria-hidden="true">
-              <circle cx="16" cy="16" r="9" stroke-width="2"/>
-              <path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31" stroke-width="2"/>
-            </svg>
-          </span>CKLES</h1>
-          <p class="tagline">Just a gamer. <b style="color:var(--ink);font-weight:700">Counter-Strike 2</b> and everything in between — ranked edits, montages, and the odd off-rotator.</p>
+          <h1 class="wordmark"><span class="wl">SH</span><span class="reticle-o"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width:100%;height:100%;display:block" aria-hidden="true"><circle cx="16" cy="16" r="9" stroke-width="2"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31" stroke-width="2"/></svg></span><span class="wr">CKLES</span></h1>
           <div class="cta-row">
             <a class="btn btn-primary" href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" stroke-width="0"/></svg>
@@ -426,31 +365,17 @@ footer{padding:30px 0}
             </a>
             <a class="btn btn-ghost" href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">Steam Profile</a>
           </div>
-          <div class="hero-meta" aria-hidden="true">
-            <span><span class="dot"></span> California, US</span>
-            <span>Highlights · Edits · Ranked</span>
-          </div>
         </div>
-
-        <div class="hero-media rv">
+        <div class="hero-media rv" style="max-width:380px">
           <a class="video-card latest" href="https://www.youtube.com/watch?v=9npL9m-TlP0" target="_blank" rel="noopener">
             <img src="https://i.ytimg.com/vi/9npL9m-TlP0/hqdefault.jpg" alt="El Porto — Counter-Strike 2" loading="eager">
-            <span class="badge">LATEST</span>
-            <span class="aim" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="16" r="9"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31"/></svg>
-            </span>
-            <span class="card-cta"><span>Watch <span class="arr">→</span></span></span>
-            <figcaption class="card-body">
-              <h2>El Porto</h2>
-              <p>Counter-Strike 2</p>
-            </figcaption>
+            <figcaption class="card-body"><h2>El Porto</h2><p>Counter-Strike 2</p></figcaption>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED -->
   <section class="section" id="videos" aria-label="Featured videos">
     <div class="wrap">
       <div class="section-head rv">
@@ -472,7 +397,7 @@ footer{padding:30px 0}
         </a>
         <a class="card rv" href="https://www.youtube.com/watch?v=KXxwfHJ76cg" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/KXxwfHJ76cg/hqdefault.jpg" alt="4 A.M. — A Valorant Edit" loading="lazy">
-          <span class="num enemy">03</span>
+          <span class="num">03</span>
           <span class="aim" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="16" r="9"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31"/></svg></span>
           <figcaption><h3>4 A.M. | A Valorant Edit</h3><p>Valorant</p></figcaption>
         </a>
@@ -486,71 +411,24 @@ footer{padding:30px 0}
     </div>
   </section>
 
-  <!-- IN ROTATION -->
-  <section class="section" id="games" aria-label="Games I play">
-    <div class="wrap">
-      <div class="section-head rv">
-        <h2>In <span class="accent">Rotation</span></h2>
-      </div>
-      <div class="rail rail-games">
-        <div class="card rv">
-          <h3>Counter-Strike 2</h3>
-          <p class="g-tag">Flagship · Competitive</p>
-        </div>
-        <div class="card rv">
-          <h3>Valorant</h3>
-          <p class="g-tag">Ranked edits</p>
-        </div>
-        <div class="card rv">
-          <h3>Lord of the Rings: War in the North</h3>
-          <p class="g-tag">Off-rotator</p>
-          <p class="g-hrs"><b>7.9 hrs</b> on record</p>
-        </div>
-        <div class="card rv">
-          <h3>Critical Ops</h3>
-          <p class="g-tag">Highlights</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about" aria-label="About Shockles">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="rv">
-          <h2>About <span class="accent">Shockles</span></h2>
-          <p><b>Shockles</b> is a shooter-first content creator out of California. The channel lives and breathes Counter-Strike 2 — ranked highlights, montages, and edits — with general gaming content mixed in when the mood hits. The goal is simple: good clips, good pacing, and the occasional off-rotator to keep things fresh.</p>
-          <p>Most of the content you'll find here is competitive FPS. If you're here to watch clean kills and watch the game, you're in the right place.</p>
-        </div>
-        <div class="side rv">
-          <div class="row"><span class="k">Location</span><span class="v">California, US</span></div>
-          <div class="row"><span class="k">Channel</span><span class="v">Just a gamer</span></div>
-          <div class="row"><span class="k">Main game</span><span class="v accent">Counter-Strike 2</span></div>
-          <div class="row"><span class="k">Platform</span><span class="v">YouTube</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONNECT -->
   <section class="connect" id="connect" aria-label="Connect">
     <div class="wrap">
       <h2 class="rv">Stay Connected</h2>
       <div class="connect-grid">
         <a class="soc you rv" href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">
           <div><div class="s-label">YouTube</div><div class="s-sub">The main channel — CS2 + gaming</div></div>
-          <svg class="s-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M10 8l6 4 6-4 6-4 6 4 6 4z" stroke-width="0"/><circle cx="12" cy="12" r="0" fill="none"/></svg>
           <span class="arr">→</span>
         </a>
         <a class="soc ste rv" href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">
           <div><div class="s-label">Steam</div><div class="s-sub">Profile · games · badges</div></div>
-          <svg class="s-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 13c0 3.1 1.9 5.8 4.7 7l.8.2c3.6 1.6 7.2 1.7 10.8.1l.7-.2C19.5 18.8 21.5 16.1 21.5 13c0-1.5-.5-2.9-1.4-3.9-.3-.4-.6-.8-1-1.2h-1.3c.6-.7 1-1.7 1-2.8A4.6 4.6 0 10 8 2.6c-.8.6-1.2 1.4-1.2 2.3 0 .7.2 1.5.6 2H2.5C1.4 14.1 1 14.9 1 13z"/></svg>
+          <span class="arr">→</span>
+        </a>
+        <a class="soc twitch rv" href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">
+          <div><div class="s-label">Twitch</div><div class="s-sub">Live &#183; @theshockles</div></div>
           <span class="arr">→</span>
         </a>
         <a class="soc x rv" href="https://x.com/ItsShockles" target="_blank" rel="noopener">
           <div><div class="s-label">X</div><div class="s-sub">@ItsShockles</div></div>
-          <svg class="s-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 4.8c-.9.5-1.9 1.3-2.4 2.1L11.9 9l-2 4.8c-.5 1.4-1.2 2.5-2.1 3.3l-.7.9c-.1.1-.3.1-.4 0L5.9 18.8c-1.1-.6-1.9-1.6-2.1-2.7l-.2-1.2c-.1-.4.1-.8.4-1l7.5-7.8 8.3 10.8.4 0c.3-.5.7-1 1.1-1.6.4-.5.6-1 1-1.8.3-.8.4-1.7.2-2.5-.4-1.2-1.3-2.2-2.4-2.5l-1-.3-.1.1c.8.8 1.4 1.7 1.4 2.7v1.1c-5-2.9-10-2.9-15 .1 1.2 1.3 2.2 2.9 2.2 4.8l1 .1c.8 0 1.6-.2 2.2-.7.7-.6 1.3-1.3 1.8-2.2l1.6-2.8.9.1 5.9 7.7h.7l.3-.1c.7-.9 1.3-2 1.5-3.1.5-2.4-.1-5.2-1.9-7.1l-.7-.9c.2 0 .5.1.7.2.7.3 1.4.6 1.9 1.2.6.6 1.1 1.4 1.3 2.3.2.9.2 1.8 0 2.7l-.3.7h-.7z"/></svg>
           <span class="arr">→</span>
         </a>
       </div>
@@ -564,88 +442,20 @@ footer{padding:30px 0}
     <div class="rowlinks">
       <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">YouTube</a>
       <a href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">Steam</a>
+      <a href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">Twitch</a>
       <a href="https://x.com/ItsShockles" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 </footer>
 
-<button class="tweaks" aria-label="Site tweaks" aria-expanded="false" id="tweaksBtn">
-  <svg class="gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 8a4 4 0 10 0 8 4 4 0 000-8zm-7 1.5v1.5l3 .6a4 4 0 001.2 0l-3 .6V15.8L2 16a3.5 3.5 0 010-2.8L7 15.8v-1.2z"/></svg>
-  TWEAKS
-</button>
-<div class="tweaks-panel" id="tweaksPanel">
-  <label>
-    <span>HUd Overlay</span>
-    <span class="switch" id="hudSw" data-hud aria-hidden="true"></span>
-  </label>
-  <label>
-    <span>Motion</span>
-    <span class="switch" id="motionSw" data-motion aria-hidden="true"></span>
-  </label>
-</div>
-
 <script>
 (function(){
-  var body=document.body;
-  var btn=document.getElementById('tweaksBtn');
-  var panel=document.getElementById('tweaksPanel');
-  var hudSw=document.getElementById('hudSw');
-  var motionSw=document.getElementById('motionSw');
-
-  // restore persisted tweaks
-  try{
-    var t=JSON.parse(localStorage.getItem('shockles-tweaks')||'{}');
-    if(t.hud!==undefined){body.classList.toggle('hud-on',t.hud);hudSw.classList.toggle('on',t.hud);}
-    if(t.motion!==undefined){
-      var off=(!t.motion);
-      document.documentElement.classList.toggle('no-motion',off);
-      motionSw.classList.toggle('on',t.motion);
-    }
-  }catch(e){}
-
-  function save(){
-    try{
-      localStorage.setItem('shockles-tweaks',JSON.stringify({
-        hud:body.classList.contains('hud-on'),
-        motion:!document.documentElement.classList.contains('no-motion')
-      }));
-    }catch(e){}
-  }
-
-  hudSw.addEventListener('click',function(e){
-    e.stopPropagation();
-    body.classList.toggle('hud-on');save();
-  });
-  motionSw.addEventListener('click',function(e){
-    e.stopPropagation();
-    var off=document.documentElement.classList.toggle('no-motion');
-    motionSw.classList.toggle('on',!off);save();
-  });
-  btn.addEventListener('click',function(){
-    var open=panel.classList.toggle('open');
-    btn.classList.toggle('open',open);
-    btn.setAttribute('aria-expanded',open?'true':'false');
-  });
-  document.addEventListener('click',function(e){
-    if(!panel.contains(e.target)&&!btn.contains(e.target)){
-      panel.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-    }
-  });
-
-  // scroll reveals
   var rv=document.querySelectorAll('.rv');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){
-    rv.forEach(function(el){el.classList.add('in');});
-  }else{
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
-      });
-    },{threshold:.12});
-    rv.forEach(function(el){io.observe(el);});
+  if(reduce){rv.forEach(function(el){el.classList.add('in')});}
+  else{var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.12});rv.forEach(function(el){io.observe(el)});
   }
 })();
 </script>
