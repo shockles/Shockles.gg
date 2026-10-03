@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firemaking guide - LordScape Wiki</title>
+<link rel="stylesheet" href="/lordscape/static/wiki.css">
+<link rel="icon" href="/lordscape/static/favicon.svg" type="image/svg+xml">
+<script>window.WIKI_BASE="/lordscape";try{var t=localStorage.getItem("wiki-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+  <a class="logo" href="/lordscape/"><img src="/lordscape/static/favicon.svg" alt=""><span>LordScape Wiki</span></a>
+  <div class="search"><input id="q" type="search" placeholder="Search LordScape Wiki" autocomplete="off"><div id="results"></div></div>
+  <button class="theme-btn" id="theme" title="Light / dark">&#9681;</button>
+</header>
+<div class="layout">
+<nav class="sidebar"><ul><li><a href="/lordscape/">Main page</a></li><li><a href="/lordscape/items.html">Items</a></li><li><a href="/lordscape/equipment.html">Equipment</a></li><li><a href="/lordscape/bestiary.html">Bestiary</a></li><li><a href="/lordscape/bosses.html">Bosses</a></li><li><a href="/lordscape/characters.html">Characters</a></li><li><a href="/lordscape/quests.html">Quests</a></li><li><a href="/lordscape/skills.html">Skills</a></li><li><a href="/lordscape/shops.html">Shops</a></li><li><a href="/lordscape/spells.html">Spells</a></li><li><a href="/lordscape/prayers.html">Prayers</a></li><li><a href="/lordscape/slayer.html">Slayer</a></li><li><a href="/lordscape/places.html">Places</a></li><li><a href="/lordscape/map.html">World map</a></li><li><a href="/lordscape/experience.html">Experience table</a></li><li><a href="/lordscape/guides.html">Guides</a></li><li><a href="/lordscape/random.html">Random page</a></li></ul></nav>
+<main class="content">
+<div class="kind">Guide</div><h1 class="firstHeading">Firemaking guide</h1>
+<div class="body">
+<div class="notes"><h2 id="how-lighting-works">How lighting works</h2>
+<p>Use <strong>Light</strong> on logs in your pack, with <a class="wl" data-title="Flint and steel">Flint and steel</a> in it. The logs go down at your
+feet and you strike every 2 ticks until they catch. Every log is lit on the same odds, which
+depend only on your Firemaking level:</p>
+<ul>
+<li>At level 1 about one strike in four catches.</li>
+<li>From level 43 every strike catches.</li>
+</ul>
+<p>A log only sets the level it opens at and the xp it gives. When the fire catches you step
+west (east, south or north if that's blocked), ready to light the next. Once you never miss,
+a line of fires burns about 1,485 logs an hour.</p>
+<p>Every fire burns for 100 to 198 ticks (a minute to two), whatever the logs, then leaves
+<a class="wl" data-title="Ashes">Ashes</a>. Logs you walked away from can be lit where they lie: right-click them, <strong>Light</strong>.</p>
+<p>You can't light a fire:
+- indoors, in a doorway, or in front of a door;
+- on a bridge or causeway;
+- in a bank, a busy town square or a guild's yard;
+- in <a class="wl" data-title="Emberwatch">Emberwatch</a>, where only the watchfires burn.</p>
+<h2 id="the-logs">The logs</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Logs</th>
+<th>Xp</th>
+<th>On a bonfire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a class="wl" data-title="Fir logs">Fir logs</a></td>
+<td>40</td>
+<td>+3 ticks of burn</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a class="wl" data-title="Oak logs">Oak logs</a></td>
+<td>60</td>
+<td>+6</td>
+</tr>
+<tr>
+<td>30</td>
+<td><a class="wl" data-title="Willow logs">Willow logs</a></td>
+<td>90</td>
+<td>+9</td>
+</tr>
+<tr>
+<td>35</td>
+<td><a class="wl" data-title="Linden logs">Linden logs</a></td>
+<td>105</td>
+<td>+12</td>
+</tr>
+<tr>
+<td>45</td>
+<td><a class="wl" data-title="Greywood logs">Greywood logs</a></td>
+<td>135</td>
+<td>+18</td>
+</tr>
+<tr>
+<td>50</td>
+<td><a class="wl" data-title="Bog oak logs">Bog oak logs</a></td>
+<td>157.5</td>
+<td>+21</td>
+</tr>
+<tr>
+<td>60</td>
+<td><a class="wl" data-title="Duskpine logs">Duskpine logs</a></td>
+<td>202.5</td>
+<td>+27</td>
+</tr>
+<tr>
+<td>75</td>
+<td><a class="wl" data-title="Firstwood logs">Firstwood logs</a></td>
+<td>303.8</td>
+<td>+36</td>
+</tr>
+<tr>
+<td>90</td>
+<td><a class="wl" data-title="Elderwood logs">Elderwood logs</a></td>
+<td>350</td>
+<td>+45</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bonfires">Bonfires</h2>
+<p>Use logs on any fire, or <strong>Tend</strong> it, and it becomes a <a class="wl" data-title="Bonfire">Bonfire</a>. You put a log on every
+9 ticks for its full xp, lowest-level logs first, and keep going until you run out. That's
+slower than a line of fires (about 975 logs an hour against 1,485), but you never move.</p>
+<ul>
+<li>Each log adds a little to the bonfire's burn, up to 3 minutes ahead.</li>
+<li><strong>Check</strong> says how it's burning.</li>
+<li>Anyone can feed anyone's bonfire, and each feeder gets their own xp.</li>
+<li>You can't start a new bonfire within 5 tiles of another.</li>
+</ul>
+<p>The <a class="wl" data-title="Camp hearth">Camp hearth</a>s at <a class="wl" data-title="The Riders&#x27; Camp">The Riders&#x27; Camp</a>, <a class="wl" data-title="The Hunters&#x27; Camp">The Hunters&#x27; Camp</a>, <a class="wl" data-title="The Woodcutters&#x27; Camp">The Woodcutters&#x27; Camp</a>
+and on <a class="wl" data-title="Saltreach">Saltreach</a>'s quay take logs the same way, and never go out.</p>
+<h2 id="emberwatch">Emberwatch</h2>
+<p>From Firemaking 50. On the Frostmark plateau, north of the Rimevault's road, the Firekeepers
+hold back the Stillfrost, a cold that takes the voice first, with four watchfires round its
+rift. Anyone in the court is in the round. A minute after the last one ends, it wakes:</p>
+<ul>
+<li><strong>Light</strong> a watchfire with flint and steel: 25 points and 6 × your Firemaking level in xp.</li>
+<li><strong>Chop</strong> frostroots at the stumps by each watchfire (any hatchet: Woodcutting xp), and
+  <strong>Fletch</strong> them into frost kindling with a knife (Fletching xp).</li>
+<li><strong>Feed</strong> the watchfire: a root is 10 points and 3 × your level in xp; kindling is 25 points
+  and 3.8 × your level. Every root and bundle wears the Stillfrost down, and so does every
+  lit watchfire.</li>
+<li>The Stillfrost snuffs watchfires out, or shatters them. Stand clear of the ground it marks.
+  <strong>Mend</strong> a shattered one with a hammer (25 points, Construction xp).</li>
+<li>Snow falls on marked ground round you. Step off it.</li>
+<li>Each watchfire's kindler freezes as the round goes on. <strong>Help</strong> him with a dose of
+  <a class="wl" data-title="Warming draught">Warming draught</a> (Pick frostbloom by the walls, mix it into a vial of meltwater from the
+  supply crate) before he falls. If he falls, his watchfire goes out and won't light until
+  you help him. Helping one is 75 points.</li>
+<li><strong>The cold.</strong> It takes your warmth: harder the higher your Firemaking, less for each warm
+  thing you wear (up to four), less beside a lit watchfire. Warm things are fur, the
+  <a class="wl" data-title="Kindler&#x27;s hood">Kindler&#x27;s hood</a> and the rest of the garb, <a class="wl" data-title="Lined mittens">Lined mittens</a>, and a lit torch or lantern.
+  A meal that heals 4 or more gives warmth back, and so does a warming draught. <strong>At no
+  warmth, the cold kills you.</strong></li>
+</ul>
+<p>When the Stillfrost is beaten, everyone with 500 points or more gets 100 × their Firemaking
+level in xp and rolls on the Firekeepers' coffer, straight to the bank:
+- one roll for every 500 points;
+- a chance at one more for what's over (1,200 points: two rolls and a 40% chance of a third).</p>
+<p>The coffer gives supplies scaled to your own levels (logs, ores, gems, herbs, seeds, fish,
+coins), burnt leaves and fire salts. Its rarer things:</p>
+<table>
+<thead>
+<tr>
+<th>Unique</th>
+<th>About 1 in</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" data-title="Kindler&#x27;s hood">Kindler&#x27;s hood</a>, <a class="wl" data-title="Kindler&#x27;s garb">Kindler&#x27;s garb</a>, <a class="wl" data-title="Kindler&#x27;s robe">Kindler&#x27;s robe</a>, <a class="wl" data-title="Kindler&#x27;s boots">Kindler&#x27;s boots</a></td>
+<td>150</td>
+<td>One piece at a time. +2.5% Firemaking xp for all four, and all warm.</td>
+</tr>
+<tr>
+<td><a class="wl" data-title="Rimefire torch">Rimefire torch</a></td>
+<td>150</td>
+<td>A light that never goes out, warm, and lights fires without flint.</td>
+</tr>
+<tr>
+<td><a class="wl" data-title="Lined mittens">Lined mittens</a></td>
+<td>150</td>
+<td>Warm.</td>
+</tr>
+<tr>
+<td><a class="wl" data-title="Ember psalter">Ember psalter</a></td>
+<td>1,000</td>
+<td>Shield slot: stands in for Ember sigils while it has <a class="wl" data-title="Burnt leaves">Burnt leaves</a> in it (20 casts a leaf), and Ember spells strike 10% harder.</td>
+</tr>
+<tr>
+<td><a class="wl" data-title="Sparkwing">Sparkwing</a></td>
+<td>5,000 (less the higher your level)</td>
+<td>The pet, a little bird of flame.</td>
+</tr>
+</tbody>
+</table>
+<p><a class="wl" data-title="Brother Cendric">Brother Cendric</a> in the entrance hall trades the garb and fire salts for burnt leaves.</p>
+<h2 id="the-keepers-pyre">The Keepers' pyre</h2>
+<p>By <a class="wl" data-title="The Drowned Chapel">The Drowned Chapel</a> the Keepers burn the drowned dead:
+1. Anoint logs with <a class="wl" data-title="Chrism">Chrism</a> (holy water and ember moss, Herblore 20) to make pyre logs.
+2. Lay <a class="wl" data-title="Drowned remains">Drowned remains</a> (from the crypt's drowned dead) on the Keepers' pyre and
+   <strong>Cremate</strong> them.</p>
+<p>Each cremation gives the pyre logs' Firemaking xp and the remains' Prayer xp. About one in
+four leaves a <a class="wl" data-title="Reliquary key">Reliquary key</a> in the ashes, for the crypt's sealed niches.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Pyre logs</th>
+<th>Xp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Fir</td>
+<td>50.5</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Oak</td>
+<td>70</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Willow</td>
+<td>100</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Linden</td>
+<td>120</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Greywood</td>
+<td>175</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Bog oak</td>
+<td>210</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Duskpine</td>
+<td>255</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Firstwood</td>
+<td>404.5</td>
+</tr>
+<tr>
+<td>95</td>
+<td>Elderwood</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lights">Lights</h2>
+<p>Lights are made, then lit with flint and steel at a Firemaking level. A lit light keeps the
+dark off you underground and counts as warm.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Light</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a class="wl" data-title="Torch">Torch</a></td>
+<td>Shops sell them unlit.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a class="wl" data-title="Candle lantern">Candle lantern</a></td>
+<td>A candle in a blown glass lantern (Crafting 12).</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a class="wl" data-title="Oil lantern">Oil lantern</a></td>
+<td>An iron and glass frame (Smithing 15) filled with <a class="wl" data-title="Lamp oil">Lamp oil</a> (seal blubber rendered at a furnace).</td>
+</tr>
+<tr>
+<td>49</td>
+<td><a class="wl" data-title="Hooded lantern">Hooded lantern</a></td>
+<td>Steel and glass (Smithing 25); lit with lamp oil.</td>
+</tr>
+<tr>
+<td>65</td>
+<td><a class="wl" data-title="Lamp-helm">Lamp-helm</a></td>
+<td>From <a class="wl" data-title="The Delvers&#x27; Hall">The Delvers&#x27; Hall</a>; lit with lamp oil. Both hands free.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fire-salts">Fire salts</h2>
+<p>A pinch of <a class="wl" data-title="Verdigris salt">Verdigris salt</a>, <a class="wl" data-title="Cobalt salt">Cobalt salt</a>, <a class="wl" data-title="Violet salt">Violet salt</a>, <a class="wl" data-title="White salt">White salt</a> or
+<a class="wl" data-title="Crimson salt">Crimson salt</a> on fir logs makes logs that always catch and burn in that colour. 250 of a
+salt fed to Sparkwing turns its feathers that colour.</p></div>
+</div>
+<footer>Generated from the game's data. Hand-written notes live in <code>wiki/notes/</code>.</footer>
+</main>
+</div>
+<script src="/lordscape/static/wiki.js"></script>
+</body>
+</html>
