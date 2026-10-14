@@ -135,7 +135,7 @@ body.has-pointer .reticle{opacity:.9}
 
 @media (max-width:900px){
   .hud-clip,.hud-sig{display:none}
-  .hud-sys{top:66px;left:20px}
+  .hud-sys{display:none}
   .logo{left:20px}
   .hero{left:20px;right:20px;top:auto;bottom:150px;transform:none}
   .index{display:none}
@@ -272,7 +272,7 @@ GPU: <span id="gpu">----</span></div>
 
   var RAMP=" .'`,:;-~=+*#%@", NG=RAMP.length;
   var state={dark:false,crt:false,color:false,focus:false,sfx:true};
-  var W=0,H=0,dpr=1,FS=11,CWd=7,CHd=13,cols=0,rows=0,n=0;
+  var W=0,H=0,dpr=1,FS=11,CWd=7,CHd=13,cols=0,rows=0,n=0,picRows=0,phone=false;
   var prev,noise,sweep,mask,att,glyph,hotArr,out;
   var mouse={x:-1e4,y:-1e4};
   var C={};
@@ -334,11 +334,14 @@ GPU: <span id="gpu">----</span></div>
     dpr=Math.min(window.devicePixelRatio||1,2);
     W=innerWidth;H=innerHeight;
     cvs.width=Math.round(W*dpr);cvs.height=Math.round(H*dpr);
-    FS=W<600?9:(W<1400?10:11);
+    phone=W<=900&&H>W;                          // portrait phones: picture sits in a band across the top
+    FS=phone?7:(W<600?9:(W<1400?10:11));
     var m=document.createElement('canvas').getContext('2d');m.font=fontStr(FS*dpr);
     CWd=Math.max(4,Math.round(m.measureText('M').width));CHd=Math.round(FS*1.2*dpr);
     cols=Math.ceil(cvs.width/CWd);rows=Math.ceil(cvs.height/CHd);n=cols*rows;
-    smp.width=cols;smp.height=rows;
+    var heroTop=document.querySelector('.hero').getBoundingClientRect().top;
+    picRows=phone?Math.min(rows,Math.round(Math.max(H*.3,Math.min(heroTop-14,W/.9))*dpr/CHd)):rows;
+    smp.width=cols;smp.height=picRows;
     prev=new Float32Array(n);glyph=new Uint8Array(n);hotArr=new Uint8Array(n);out=new Uint8Array(n*4);
     noise=new Float32Array(n);sweep=new Float32Array(n);
     for(var i=0;i<n;i++){noise[i]=Math.random();sweep[i]=Math.random()}
@@ -364,10 +367,10 @@ GPU: <span id="gpu">----</span></div>
   function smooth(a,b,t){t=Math.min(1,Math.max(0,(t-a)/(b-a)));return t*t*(3-2*t)}
   function buildMask(){
     mask=new Float32Array(n);att=new Float32Array(n).fill(1);
-    var mobile=W<=900;
+    var mobile=W<=900,band=picRows/rows;
     for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){
       var u=x/cols,v=y/rows;
-      mask[y*cols+x]=state.focus?1:(mobile?1-smooth(.38,.62,v):smooth(.16,.5,u));
+      mask[y*cols+x]=phone?1-smooth(band-.06,band+.01,v):state.focus?1:(mobile?1-smooth(.38,.62,v):smooth(.16,.5,u));
     }
     if(state.focus)return;
     var px=dpr/CWd,py=dpr/CHd,F=7;
@@ -397,15 +400,15 @@ GPU: <span id="gpu">----</span></div>
 
     var lum=null,lo=1,hi=0,sum=0,px=null;
     if(src){
-      var ca=cols*CWd/(rows*CHd),va=src.w/src.h,sx=0,sy=0,sw=src.w,sh=src.h;
+      var ca=cols*CWd/(picRows*CHd),va=src.w/src.h,sx=0,sy=0,sw=src.w,sh=src.h;
       if(va>ca){sw=src.h*ca;sx=(src.w-sw)/2}else{sh=src.w/ca;sy=(src.h-sh)/2}
-      sctx.drawImage(src.el,sx,sy,sw,sh,0,0,cols,rows);
-      px=sctx.getImageData(0,0,cols,rows).data;
+      sctx.drawImage(src.el,sx,sy,sw,sh,0,0,cols,picRows);
+      px=sctx.getImageData(0,0,cols,picRows).data;
       lum=new Float32Array(n);
-      for(var i=0,p=0;i<n;i++,p+=4){var l=(.2126*px[p]+.7152*px[p+1]+.0722*px[p+2])/255;lum[i]=l;sum+=l;if(l<lo)lo=l;if(l>hi)hi=l}
+      for(var i=0,p=0,np=cols*picRows;i<np;i++,p+=4){var l=(.2126*px[p]+.7152*px[p+1]+.0722*px[p+2])/255;lum[i]=l;sum+=l;if(l<lo)lo=l;if(l>hi)hi=l}
     }
     var span=Math.max(.15,hi-lo), blank=!src||hi<.08;
-    var dark=state.dark,cut=dark?.1:.38,moving=0;
+    var dark=state.dark,cut=dark?(phone?.2:.08):(phone?.3:.38),moving=0,np=cols*picRows;
     var intro=reduce?2:Math.max(0,(now-t0-250)/1500);
     var scr=now<scrambleUntil;
     var mcx=mouse.x*dpr/CWd,mcy=mouse.y*dpr/CHd,asp=CHd/CWd;
@@ -419,7 +422,7 @@ GPU: <span id="gpu">----</span></div>
       for(var x=0;x<cols;x++){
         var k=y*cols+x,g=0,hot=0;
         glyph[k]=0;hotArr[k]=0;
-        if(!blank){
+        if(!blank&&k<np){
           var L=lum[k],d=live?Math.abs(L-prev[k]):0;prev[k]=L;
           if(d>.09)moving++;
           var m=mask[k];
@@ -449,7 +452,7 @@ GPU: <span id="gpu">----</span></div>
         var o=k*4;
         if(g){
           var c=hot?A:G;
-          if(state.color&&!hot&&px){out[o]=px[o];out[o+1]=px[o+1];out[o+2]=px[o+2]}
+          if(state.color&&!hot&&px&&k<np){out[o]=px[o];out[o+1]=px[o+1];out[o+2]=px[o+2]}
           else{out[o]=c[0];out[o+1]=c[1];out[o+2]=c[2]}
         }
         out[o+3]=g;
@@ -464,8 +467,8 @@ GPU: <span id="gpu">----</span></div>
       $('tc').textContent=pad(Math.floor(tc/60))+':'+pad(Math.floor(tc%60))+':'+pad(f%30);
       $('frame').textContent=String(f).padStart(6,'0');
     }
-    lastMotion=n?moving/n:0;
-    if(n){$('luma').textContent=(sum/n).toFixed(2);$('motion').textContent=(moving/n*100).toFixed(1).padStart(4,'0')+'%'}
+    lastMotion=np?moving/np:0;
+    if(n){$('luma').textContent=(sum/np).toFixed(2);$('motion').textContent=(moving/np*100).toFixed(1).padStart(4,'0')+'%'}
   }
 
   function render(){
@@ -543,6 +546,7 @@ GPU: <span id="gpu">----</span></div>
   document.addEventListener('pointerleave',function(){mouse.x=mouse.y=-1e4;body.classList.remove('has-pointer')});
 
   addEventListener('pointerdown',function(e){
+    if(!stillsOnly&&vid.paused&&!document.hidden)vid.play().catch(function(){});   // phones that blocked autoplay start on first tap
     if(e.button!==0||e.target.closest('a,button,input'))return;
     shoot(e.clientX,e.clientY);
   });
