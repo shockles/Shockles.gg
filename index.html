@@ -3,413 +3,406 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shockles — CS2 & Valorant Clips</title>
-<meta name="description" content="Shockles — Counter-Strike 2 and Valorant clips, montages and edits. Watch on YouTube.">
+<title>Shockles — CS2 & Gaming</title>
+<meta name="description" content="Just a gamer. CS2, Valorant and off-rotators from California. Watch the clips on YouTube.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Shockles — CS2 & Valorant Clips">
-<meta property="og:description" content="Counter-Strike 2 and Valorant clips, montages and edits. Watch on YouTube.">
-<meta property="og:image" content="https://shockles.gg/og-image.png">
-<meta property="og:image:alt" content="Shockles wordmark with a crosshair O">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:title" content="Shockles — CS2 & Gaming">
+<meta property="og:description" content="Just a gamer. CS2, Valorant and off-rotators from California.">
+<meta property="og:image" content="https://shockles.gg/media/poster.jpg">
 <meta property="og:url" content="https://shockles.gg/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Shockles — CS2 & Valorant Clips">
-<meta name="twitter:description" content="Counter-Strike 2 and Valorant clips, montages and edits.">
-<meta name="twitter:image" content="https://shockles.gg/og-image.png">
-<link rel="canonical" href="https://shockles.gg/">
+<meta name="twitter:image" content="https://shockles.gg/media/poster.jpg">
+<meta name="theme-color" content="#efe8d9">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0b0d11">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Michroma&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0d11;
-  --bg-2:#10141c;
-  --surface:#141a24;
-  --surface-2:#1a2130;
-  --ink:#e9edf4;
-  --ink-mut:#939cab;
-  --ink-faint:#6a7383;
-  --line:#242c3c;
-  --line-strong:#303b4e;
+  --bg:#efe8d9;
+  --ink:#171512;
+  --ink-mut:#5d574c;
+  --ink-faint:#8f877a;
+  --glyph:#3a362f;
   --accent:#9d5df6;
-  --accent-soft:rgba(157,93,246,.12);
-  --glow:rgba(157,93,246,.28);
-  --radius:10px;
-  --radius-sm:6px;
-  --maxw:1180px;
+  --accent-ink:#ffffff;
+  --rule:#cfc6b3;
+  --chip:#ddd5c4;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --display:'Michroma','Eurostile','Arial Black',sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#0f0e0c;
+  --ink:#efe8d9;
+  --ink-mut:#aaa294;
+  --ink-faint:#756e62;
+  --glyph:#cfc6b3;
+  --rule:#3a362f;
+  --chip:#24221e;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html,body{height:100%}
 body{
   background:var(--bg);color:var(--ink);
-  font-family:'Space Grotesk',system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;line-height:1.5;
-  overflow-x:hidden;min-height:100vh;
+  font-family:var(--mono);font-size:12px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow:hidden;
+  transition:background-color .35s,color .35s;
 }
-img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-a:focus-visible,button:focus-visible{
-  outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius-sm);
-}
-h1,h2,h3,.display{font-family:'Chakra Petch',system-ui,sans-serif}
-::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+::selection{background:var(--accent);color:var(--accent-ink)}
 
-/* ---------- top bar ---------- */
-.top{
-  position:sticky;top:0;z-index:20;
-  background:color-mix(in oklab, var(--bg) 88%, transparent);
-  backdrop-filter:none;border-bottom:1px solid var(--line);
-}
-.top .wrap{
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  max-width:var(--maxw);margin:0 auto;padding:14px 22px;
-}
-.brand{display:inline-flex;align-items:center;gap:.01em;font-family:'Chakra Petch';font-weight:800;letter-spacing:.12em;font-size:1.15rem}
-.mark{width:1.2rem;height:1.2rem;color:var(--accent);display:inline-block;flex:0 0 auto}
-.links{display:flex;gap:.2rem}
-.links a{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:.62rem 1rem;font-size:.92rem;font-weight:600;letter-spacing:.04em;
-  color:var(--ink-mut);border:1px solid var(--line);border-radius:var(--radius-sm);
-  min-height:44px;transition:color .18s,border-color .18s,transform .18s;
-}
-.links a:hover{color:var(--ink);border-color:var(--accent);transform:translateY(-1px)}
+/* ---------- stage ---------- */
+#ascii{position:fixed;inset:0;width:100%;height:100%;display:block}
+.source{position:fixed;width:1px;height:1px;opacity:0;pointer-events:none}
 
-/* ---------- layout ---------- */
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-section{padding:96px 0;position:relative}
-section:first-of-type{padding-top:64px}
-.section-head{
-  display:flex;align-items:baseline;justify-content:space-between;
-  gap:1rem;margin-bottom:28px;flex-wrap:wrap;
-}
-.section-head h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:.03em;text-transform:uppercase}
-.section-head h2 .accent{color:var(--accent)}
-.section-head a{font-size:.9rem;font-weight:600;color:var(--ink-mut);letter-spacing:.03em;display:inline-flex;align-items:center;gap:.4rem;min-height:44px}
-.section-head a:hover{color:var(--accent)}
-.section-head a .arr{transition:transform .2s}
-.section-head a:hover .arr{transform:translateX(4px)}
+.crt{position:fixed;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;z-index:5;
+  background:
+    repeating-linear-gradient(to bottom,rgba(0,0,0,.09) 0 1px,transparent 1px 3px),
+    radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.38) 100%);
+  mix-blend-mode:multiply}
+body.is-crt .crt{opacity:1;animation:flick 3.2s steps(1) infinite}
+body.is-crt #ascii{filter:blur(.35px) contrast(1.15)}
+@keyframes flick{0%,100%{opacity:1}47%{opacity:.86}48%{opacity:1}83%{opacity:.93}}
 
-/* ---------- hero ---------- */
-.hero{padding-top:80px;padding-bottom:20px}
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);
-  align-items:center;
-}
-.tagline{
-  margin-top:1.1rem;font-size:clamp(1rem,2vw,1.2rem);
-  color:var(--ink-mut);max-width:46ch;line-height:1.55;
-}
-.wordmark{
-  display:inline-flex;align-items:center;
-  font-size:clamp(3rem,10vw,7.4rem);line-height:.88;letter-spacing:.01em;
-  font-weight:800;text-transform:uppercase;
-}
-.wordmark .wl,.wordmark .wr{font-family:inherit;font-weight:inherit;letter-spacing:inherit;text-transform:inherit}
-.wordmark .reticle-o{
-  display:inline-block;width:1em;height:1em;flex:0 0 auto;color:var(--accent);
-  transition:transform .25s cubic-bezier(.22,1,.36,1),filter .25s;
-  cursor:default;
-}
-.wordmark .reticle-o:hover{
-  transform:scale(1.35);
-  filter:drop-shadow(0 0 8px var(--glow)) drop-shadow(0 0 16px var(--glow));
-}
-.wordmark .reticle-o svg{transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.wordmark .reticle-o:hover svg{transform:rotate(45deg)}
+/* ---------- UI ---------- */
+.ui{position:fixed;inset:0;z-index:10;pointer-events:none;transition:opacity .4s}
+.ui a,.ui button{pointer-events:auto}
+body.is-focus .ui .hide-in-focus{opacity:0;pointer-events:none}
+.hide-in-focus{transition:opacity .4s}
 
-.top .brand .reticle-o{
-  color:var(--accent);
-  transform:translateY(14%) rotate(0deg);
-  transition:transform .25s cubic-bezier(.22,1,.36,1),filter .25s;
-}
-.top .brand .reticle-o svg{transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.top .brand .reticle-o:hover svg{transform:rotate(45deg)}
-.tagline{
-  margin-top:1.4rem;font-size:clamp(1rem,2vw,1.2rem);
-  color:var(--ink-mut);max-width:46ch;line-height:1.55;
-}
-.cta-row{display:flex;gap:.7rem;margin-top:2rem;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-  padding:.9rem 1.4rem;font-family:'Chakra Petch';font-weight:700;
-  font-size:.92rem;letter-spacing:.05em;text-transform:uppercase;
-  border-radius:var(--radius-sm);min-height:48px;
-  transition:transform .18s,box-shadow .18s,background .18s,color .18s,border-color .18s;
-  cursor:pointer;border:1px solid var(--line);
-}
-.btn:active{transform:translateY(1px) scale(.995)}
-.btn-primary{background:var(--accent);color:#101318;border-color:var(--accent)}
-.btn-primary:hover{background:#b07ef8;box-shadow:0 10px 30px -8px var(--glow);transform:translateY(-2px)}
-.btn-ghost{color:var(--ink-mut);border-color:var(--line)}
-.btn-ghost:hover{color:var(--ink);border-color:var(--accent)}
-/* hero media card */
-.hero-media{
-  position:relative;
-  transition:transform .22s;
-}
-.video-card{
-  position:relative;border:1px solid var(--line);
-  border-radius:var(--radius);overflow:hidden;
-  display:flex;flex-direction:column;background:var(--surface);
-}
-.video-card::before{
-  content:"";position:absolute;inset:-3px;border-radius:calc(var(--radius) + 3px);
-  background:var(--accent);
-  z-index:-1;opacity:0;transition:opacity .3s,transform .45s cubic-bezier(.22,1,.36,1);
-  transform:scale(.96);filter:blur(10px);
-}
-.video-card:hover::before{opacity:1;transform:scale(1)}
-.video-card:hover{
-  transform:translateY(-3px);
-}
-.video-card img{
-  width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
-  transform:scale(1.0);transition:transform .4s cubic-bezier(.22,1,.36,1);
-}
-.video-card:hover img{
-  transform:scale(1.1);
-  filter:hue-rotate(10deg) saturate(1.1);
-}
-.video-card:hover{
-  box-shadow:0 0 20px 4px rgba(157,93,246,.4),0 0 40px 10px rgba(157,93,246,.2);
-  animation:cardGlow 3s ease-in-out infinite alternate;
-}
-@keyframes cardGlow{
-  0%{box-shadow:0 0 12px 2px rgba(157,93,246,.25),0 0 24px 6px rgba(157,93,246,.1)}
-  100%{box-shadow:0 0 20px 4px rgba(157,93,246,.4),0 0 40px 10px rgba(157,93,246,.2)}
-}
-.video-card .badge{
-  position:absolute;top:12px;left:12px;
-  font-family:'Chakra Petch';font-size:.7rem;font-weight:800;letter-spacing:.16em;
-  color:var(--bg);background:var(--accent);padding:5px 10px;border-radius:var(--radius-sm);
-}
-.card-body{padding:16px 18px 18px}
-.card-body h2{font-family:'Chakra Petch';font-size:1.25rem;font-weight:700;letter-spacing:.02em}
-.card-body p{color:var(--ink-mut);font-size:.86rem;margin-top:.2rem;font-family:'Chakra Petch';letter-spacing:.04em}
-.aim{
-  position:absolute;top:50%;left:50%;width:74px;height:74px;
-  translate:-50% -50%;opacity:0;transform:scale(.6) rotate(0deg);
-  transition:opacity .28s,transform .38s;pointer-events:none;color:var(--accent);
-}
-.video-card:hover .aim{opacity:.95;transform:scale(1) rotate(90deg)}
+.logo{position:absolute;top:22px;left:28px;width:30px;height:30px;color:var(--ink);display:block}
+.logo svg{width:100%;height:100%;display:block;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.logo:hover svg{transform:rotate(45deg);color:var(--accent)}
 
-/* ---------- rails ---------- */
-.rail{display:grid;gap:14px}
-.rail-videos{grid-template-columns:repeat(auto-fill,minmax(238px,1fr))}
-.rail .card{
-  position:relative;border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;background:var(--surface);
-  transition:transform .22s,border-color .22s,box-shadow .22s;
-}
-.rail .card::before{
-  content:"";position:absolute;inset:-3px;border-radius:calc(var(--radius) + 3px);
-  background:var(--accent);
-  z-index:-1;opacity:0;transition:opacity .3s,transform .45s cubic-bezier(.22,1,.36,1);
-  transform:scale(.96);filter:blur(10px);
-}
-.rail .card:hover::before{opacity:1;transform:scale(1)}
-.rail .card:hover{transform:translateY(-3px) scale(1.03);border-color:var(--accent);box-shadow:0 0 22px 6px rgba(157,93,246,.5),0 0 44px 12px rgba(157,93,246,.2)}
-.rail-videos .card{cursor:pointer}
-.rail .card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .45s}
-.rail-videos .card:hover img{transform:scale(1.08);filter:hue-rotate(10deg) saturate(1.1)}
-.rail-videos .card .num{
-  position:absolute;top:10px;left:10px;
-  font-family:'Chakra Petch';font-weight:800;font-size:.7rem;letter-spacing:.14em;
-  color:var(--bg);background:var(--accent);padding:3px 8px;border-radius:4px;
-}
-.rail-videos .card figcaption{padding:13px 15px 15px;transition:transform .45s cubic-bezier(.22,1,.36,1)}
-.rail-videos .card figcaption h3{font-size:.98rem;font-weight:700;letter-spacing:.02em;line-height:1.25}
-.rail-videos .card figcaption p{color:var(--ink-mut);font-size:.78rem;margin-top:.25rem;font-family:'Chakra Petch';letter-spacing:.03em}
+.hud{position:absolute;font-size:10.5px;line-height:1.55;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mut);white-space:pre}
+.hud b{font-weight:500;color:var(--ink)}
+.hud,.index,.socials,.tag,.kicker{text-shadow:0 0 2px var(--bg),0 0 4px var(--bg),0 0 6px var(--bg)}
+.hud.ruled{border-left:1px solid var(--accent);padding-left:10px}
+.hud-sys{top:21vh;left:28px}
+.hud-clip{top:21vh;left:38vw}
+.hud-clip a{pointer-events:auto}
+.hud-clip a:hover b{color:var(--accent)}
+.hud-sig{top:21vh;right:28px}
+.hud-player{bottom:84px;right:28px}
 
+.hero{position:absolute;left:clamp(20px,6.5vw,110px);top:50%;transform:translateY(-46%);max-width:min(640px,92vw)}
+.wordmark{font-family:var(--display);font-weight:400;font-size:clamp(46px,8.6vw,138px);line-height:.9;letter-spacing:-.01em;
+  display:flex;align-items:center;color:var(--ink);text-transform:uppercase;user-select:none}
+.wordmark .o{display:inline-block;width:.86em;height:.86em;margin:0 .02em;color:var(--accent);flex:0 0 auto;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.wordmark .o svg{width:100%;height:100%;display:block}
+.wordmark:hover .o{transform:rotate(45deg) scale(1.08)}
+.kicker{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.32em;color:var(--accent);margin-bottom:14px;text-transform:uppercase}
+.tag{margin-top:26px;font-size:clamp(12px,1.25vw,15px);font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--ink)}
 
-/* ---------- connect ---------- */
-.connect{padding-top:40px;padding-bottom:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.connect h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:26px}
-.connect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.connect .soc{
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
-  background:var(--surface);cursor:pointer;
-  transition:transform .18s,border-color .18s,background .18s;min-height:84px;
+.cta{margin-top:30px;display:flex;max-width:430px;height:44px;pointer-events:auto}
+.cta .field{flex:1;display:flex;align-items:center;padding:0 14px;background:color-mix(in srgb,var(--bg) 70%,#fff 30%);
+  color:var(--ink-faint);font-size:13px;letter-spacing:.02em;border:1px solid var(--rule);border-right:0;white-space:nowrap;overflow:hidden}
+:root[data-theme="dark"] .cta .field{background:#1a1916}
+.cta .go{display:inline-flex;align-items:center;gap:.6em;padding:0 18px;background:var(--accent);color:var(--accent-ink);
+  font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.02em;white-space:nowrap;transition:filter .18s}
+.cta .go:hover{filter:brightness(1.1)}
+.cta .go .arr{transition:transform .2s}
+.cta .go:hover .arr{transform:translateX(3px)}
+
+.socials{margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;font-size:11px;letter-spacing:.04em}
+.socials a{color:var(--ink-mut);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule);pointer-events:auto}
+.socials a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+.index{position:absolute;left:28px;bottom:26px;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+.index .h{color:var(--ink-mut);margin-bottom:4px}
+.index a{display:block;color:var(--ink-mut);pointer-events:auto}
+.index a:hover{color:var(--accent)}
+.index a span{color:var(--ink-faint);margin-right:.8em}
+
+.keys{position:absolute;right:28px;bottom:24px;display:flex;gap:6px}
+.keys button{pointer-events:auto;font:inherit;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  background:var(--chip);color:var(--ink-mut);border:0;padding:5px 9px;display:inline-flex;gap:.8em;transition:background .18s,color .18s}
+.keys button kbd{font:inherit;color:var(--ink)}
+.keys button:hover,.keys button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.keys button:hover kbd,.keys button[aria-pressed="true"] kbd{color:var(--accent-ink)}
+
+.toast{position:fixed;left:50%;bottom:70px;transform:translate(-50%,10px);opacity:0;z-index:20;
+  background:var(--ink);color:var(--bg);padding:7px 12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:opacity .25s,transform .25s;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.reticle{position:fixed;z-index:6;width:34px;height:34px;margin:-17px 0 0 -17px;color:var(--accent);pointer-events:none;opacity:0;transition:opacity .2s}
+body.has-pointer .reticle{opacity:.9}
+
+@media (max-width:900px){
+  .hud-clip,.hud-sig{display:none}
+  .hud-sys{top:66px;left:20px}
+  .logo{left:20px}
+  .hero{left:20px;right:20px;top:auto;bottom:150px;transform:none}
+  .index{display:none}
+  .hud-player{display:none}
+  .keys{left:20px;right:20px;bottom:20px;flex-wrap:wrap}
+  .wordmark{font-size:clamp(30px,11.2vw,80px)}
+  .cta{max-width:none}
+  .cta .field{display:none}
+  .cta .go{flex:1;justify-content:center}
 }
-.connect .soc:hover{border-color:var(--accent);transform:translateY(-3px);background:var(--surface-2)}
-.connect .soc .s-label{font-family:'Chakra Petch';font-weight:700;font-size:1rem;letter-spacing:.04em}
-.connect .soc .s-sub{font-size:.78rem;color:var(--ink-mut);font-family:'Chakra Petch';letter-spacing:.04em;margin-top:2px}
-.connect .soc .arr{color:var(--ink-faint);transition:transform .2s}
-.connect .soc:hover .arr{transform:translateX(4px);color:var(--accent)}
-
-/* ---------- footer ---------- */
-footer{padding:30px 0}
-.foot{
-  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-  max-width:var(--maxw);margin:0 auto;padding:0 22px;
-  font-family:'Chakra Petch';font-size:.74rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-faint);
-}
-.foot .b{color:var(--ink-mut);font-weight:600}
-.foot a{color:var(--ink-mut)}
-.foot a:hover{color:var(--accent)}
-.foot .rowlinks{display:flex;gap:1rem}
-.foot .rowlinks a{color:var(--ink-faint)}
-
-/* ---------- reveals ---------- */
-.rv{opacity:0;translate:0 16px;transition:opacity .7s cubic-bezier(.16,.8,.3,1),translate .7s cubic-bezier(.16,.8,.3,1)}
-.rv.in{opacity:1;translate:0 0}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  .rv{opacity:1;translate:0 0}
-}
-
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-
-/* ---------- responsive ---------- */
-@media (max-width:860px){
-  .hero-grid{grid-template-columns:1fr;gap:2rem}
-  .hero-media{max-width:560px}
-  .connect-grid{grid-template-columns:1fr}
-  section{padding:64px 0}
-}
-@media (max-width:600px){
-  .top .wrap{padding:12px 16px}
-  .links a{padding:.55rem .75rem;font-size:.84rem}
-  .wrap{padding:0 16px}
-  footer .rowlinks{display:none}
-  .links{display:none}
+@media (max-height:620px) and (min-width:901px){
+  .index,.hud-player{display:none}
 }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top" style="gap:.12em" aria-label="Shockles — back to top">
-      <span class="wl">SH</span><span class="reticle-o"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width:1em;height:1em;display:inline-block" aria-hidden="true"><circle cx="16" cy="16" r="9" stroke-width="2"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31" stroke-width="2"/></svg></span><span class="wr">CKLES</span>
-    </a>
-    <nav class="links">
-      <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">YouTube</a>
+<canvas id="ascii" aria-hidden="true"></canvas>
+<video class="source" id="src" src="media/cutthroat.mp4" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+<div class="crt" aria-hidden="true"></div>
+<svg class="reticle" id="reticle" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="16" r="9"/><path d="M16 1V6M16 26V31M1 16H6M26 16H31"/></svg>
+
+<div class="ui">
+  <a class="logo" href="./" aria-label="Shockles home">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="16" cy="16" r="9"/><path d="M16 1V6M16 26V31M1 16H6M26 16H31"/></svg>
+  </a>
+
+  <div class="hud hud-sys hide-in-focus" aria-hidden="true">SHOCKLES.EXE
+V2.0.0
+REALTIME <span id="fps">--</span> FPS
+<span id="cells">----</span> GLYPHS
+SERVER: ONLINE</div>
+
+  <div class="hud hud-clip ruled hide-in-focus"><a href="https://www.youtube.com/watch?v=3NTfGjY7nsQ" target="_blank" rel="noopener">CLIP: <b>CUTTHROAT | CSGO MONTAGE</b> ↗</a>
+GENRE: TACTICAL FPS
+TC: <span id="tc">00:00:00</span>
+FRAME: <span id="frame">000000</span></div>
+
+  <div class="hud hud-sig ruled hide-in-focus" aria-hidden="true">LUMA: <span id="luma">0.00</span>
+MOTION: <span id="motion">00.0%</span>
+X: <span id="mx">----</span>
+Y: <span id="my">----</span></div>
+
+  <main class="hero hide-in-focus">
+    <div class="kicker">// Just a gamer</div>
+    <h1 class="wordmark" aria-label="Shockles">SH<span class="o"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><path d="M16 1V6M16 26V31M1 16H6M26 16H31"/></svg></span>CKLES</h1>
+    <p class="tag">CS2. Valorant. Off-rotators.</p>
+    <div class="cta">
+      <span class="field">youtube.com/@shockles</span>
+      <a class="go" href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">Watch on YouTube <span class="arr">→</span></a>
+    </div>
+    <nav class="socials" aria-label="Elsewhere">
       <a href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">Twitch</a>
       <a href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">Steam</a>
-      <a href="https://x.com/ItsShockles" target="_blank" rel="noopener">X</a>
+      <a href="https://x.com/ItsShockles" target="_blank" rel="noopener">X / @ItsShockles</a>
     </nav>
+  </main>
+
+  <nav class="index hide-in-focus" aria-label="Featured videos">
+    <div class="h">// Featured</div>
+    <a href="https://www.youtube.com/watch?v=3NTfGjY7nsQ" target="_blank" rel="noopener"><span>01</span>Cutthroat — CSGO Montage</a>
+    <a href="https://www.youtube.com/watch?v=Yo1IVnEzPvY" target="_blank" rel="noopener"><span>02</span>Statues — CS:GO Highlights</a>
+    <a href="https://www.youtube.com/watch?v=KXxwfHJ76cg" target="_blank" rel="noopener"><span>03</span>4 A.M. — A Valorant Edit</a>
+    <a href="https://www.youtube.com/watch?v=TdZzGE9zztk" target="_blank" rel="noopener"><span>04</span>Pro Plays</a>
+    <a href="https://www.youtube.com/watch?v=9npL9m-TlP0" target="_blank" rel="noopener"><span>05</span>El Porto — CS2</a>
+  </nav>
+
+  <div class="hud hud-player ruled hide-in-focus" aria-hidden="true">PLAYER.ONE
+TIME: <span id="time">--:--:--</span>
+ZONE: <span id="zone">----</span>
+PHASE: <span id="phase">----</span>
+GPU: <span id="gpu">----</span></div>
+
+  <div class="keys" role="toolbar" aria-label="Display toggles">
+    <button type="button" data-key="d" aria-pressed="false"><kbd>D</kbd>Dark</button>
+    <button type="button" data-key="r" aria-pressed="false"><kbd>R</kbd>CRT</button>
+    <button type="button" data-key="c" aria-pressed="false"><kbd>C</kbd>Color</button>
+    <button type="button" data-key="f" aria-pressed="false"><kbd>F</kbd>Focus</button>
+    <button type="button" data-key="h"><kbd>H</kbd>Share</button>
   </div>
-</header>
+</div>
 
-<main>
-  <section class="hero" id="top" aria-label="Shockles">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div class="rv">
-          <h1 class="wordmark"><span class="sr-only">Shockles</span><span class="wl" aria-hidden="true">SH</span><span class="reticle-o" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width:100%;height:100%;display:block" aria-hidden="true"><circle cx="16" cy="16" r="9" stroke-width="2"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31" stroke-width="2"/></svg></span><span class="wr" aria-hidden="true">CKLES</span></h1>
-          <p class="tagline">Counter-Strike 2 and Valorant clips, montages and edits.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" stroke-width="0"/></svg>
-              Watch on YouTube
-            </a>
-            <a class="btn btn-ghost" href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">Steam Profile</a>
-          </div>
-        </div>
-        <div class="hero-media rv" style="max-width:380px">
-          <a class="video-card latest" href="https://www.youtube.com/watch?v=9npL9m-TlP0" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/9npL9m-TlP0/hqdefault.jpg" alt="El Porto — Counter-Strike 2" loading="eager">
-            <figcaption class="card-body"><h2>El Porto</h2><p>Counter-Strike 2</p></figcaption>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="videos" aria-label="Featured videos">
-    <div class="wrap">
-      <div class="section-head rv">
-        <h2>Featured <span class="accent">Videos</span></h2>
-        <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g/videos" target="_blank" rel="noopener">See all on YouTube <span class="arr">→</span></a>
-      </div>
-      <div class="rail rail-videos">
-        <a class="card rv" href="https://www.youtube.com/watch?v=3NTfGjY7nsQ" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/3NTfGjY7nsQ/hqdefault.jpg" alt="Cutthroat CSGO Montage" loading="lazy">
-          <span class="num">01</span>
-          <span class="aim" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="16" r="9"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31"/></svg></span>
-          <figcaption><h3>Cutthroat | CSGO Montage</h3><p>Counter-Strike</p></figcaption>
-        </a>
-        <a class="card rv" href="https://www.youtube.com/watch?v=Yo1IVnEzPvY" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/Yo1IVnEzPvY/hqdefault.jpg" alt="Statues CS:GO Highlights" loading="lazy">
-          <span class="num">02</span>
-          <span class="aim" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="16" r="9"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31"/></svg></span>
-          <figcaption><h3>Statues | CS:GO Highlights</h3><p>Counter-Strike</p></figcaption>
-        </a>
-        <a class="card rv" href="https://www.youtube.com/watch?v=KXxwfHJ76cg" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/KXxwfHJ76cg/hqdefault.jpg" alt="4 A.M. — A Valorant Edit" loading="lazy">
-          <span class="num">03</span>
-          <span class="aim" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="16" r="9"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31"/></svg></span>
-          <figcaption><h3>4 A.M. | A Valorant Edit</h3><p>Valorant</p></figcaption>
-        </a>
-        <a class="card rv" href="https://www.youtube.com/watch?v=TdZzGE9zztk" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/TdZzGE9zztk/hqdefault.jpg" alt="Pro Plays" loading="lazy">
-          <span class="num">04</span>
-          <span class="aim" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="16" r="9"/><path d="M16 1 V6 M16 26 V31 M1 16 H6 M26 16 H31"/></svg></span>
-          <figcaption><h3>Pro Plays</h3><p>Counter-Strike</p></figcaption>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="connect" id="connect" aria-label="Connect">
-    <div class="wrap">
-      <h2 class="rv">Stay Connected</h2>
-      <div class="connect-grid">
-        <a class="soc you rv" href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">
-          <div><div class="s-label">YouTube</div><div class="s-sub">The main channel — CS2 + gaming</div></div>
-          <span class="arr">→</span>
-        </a>
-        <a class="soc ste rv" href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">
-          <div><div class="s-label">Steam</div><div class="s-sub">Profile · games · badges</div></div>
-          <span class="arr">→</span>
-        </a>
-        <a class="soc twitch rv" href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">
-          <div><div class="s-label">Twitch</div><div class="s-sub">Live &#183; @theshockles</div></div>
-          <span class="arr">→</span>
-        </a>
-        <a class="soc x rv" href="https://x.com/ItsShockles" target="_blank" rel="noopener">
-          <div><div class="s-label">X</div><div class="s-sub">@ItsShockles</div></div>
-          <span class="arr">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="foot">
-    <span class="b">SHOCKLES.GG</span>
-    <div class="rowlinks">
-      <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://steamcommunity.com/id/TheShockles/" target="_blank" rel="noopener">Steam</a>
-      <a href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">Twitch</a>
-      <a href="https://x.com/ItsShockles" target="_blank" rel="noopener">X</a>
-    </div>
-  </div>
-</footer>
+<div class="toast" id="toast" role="status"></div>
 
 <script>
 (function(){
-  var rv=document.querySelectorAll('.rv');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){rv.forEach(function(el){el.classList.add('in')});}
-  else{var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
-  },{threshold:.12});rv.forEach(function(el){io.observe(el)});
+  var cvs=document.getElementById('ascii'), ctx=cvs.getContext('2d');
+  var vid=document.getElementById('src');
+  var smp=document.createElement('canvas'), sctx=smp.getContext('2d',{willReadFrequently:true});
+  var root=document.documentElement, body=document.body;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(id){return document.getElementById(id)};
+
+  var RAMP=" .'`,:;-~=+*#%@";
+  var FS=11, LH=13, CW=6.6;           // font size, line height, char width (measured below)
+  var cols=0, rows=0, W=0, H=0, dpr=1;
+  var prev=null, mask=null, noise=null;
+  var state={dark:false,crt:false,color:false,focus:false};
+  var mouse={x:-1e4,y:-1e4};
+  var lastDraw=0, frames=0, fpsT=performance.now();
+
+  function css(n){return getComputedStyle(root).getPropertyValue(n).trim()}
+  var C={};
+  function readColors(){C.glyph=css('--glyph');C.accent=css('--accent');C.bg=css('--bg')}
+
+  function layout(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    W=innerWidth;H=innerHeight;
+    cvs.width=W*dpr;cvs.height=H*dpr;
+    FS=W<600?9:(W<1400?11:12);LH=Math.round(FS*1.18);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.font='500 '+FS+'px "JetBrains Mono", ui-monospace, monospace';
+    ctx.textBaseline='top';
+    CW=ctx.measureText('M').width;
+    cols=Math.ceil(W/CW);rows=Math.ceil(H/LH);
+    smp.width=cols;smp.height=rows;
+    prev=new Float32Array(cols*rows);
+    buildMask();
+    $('cells').textContent=String(cols*rows).padStart(4,'0');
   }
+
+  // Where the picture is allowed to appear: dense on the right, a sparse scatter under the wordmark.
+  function buildMask(){
+    mask=new Float32Array(cols*rows);noise=new Float32Array(cols*rows);
+    var mobile=W<=900;
+    for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){
+      var u=x/cols,v=y/rows,m;
+      if(state.focus)m=1;
+      else if(mobile)m=1-smooth(.38,.62,v);
+      else m=smooth(.16,.5,u);
+      var i=y*cols+x;mask[i]=m;noise[i]=Math.random();
+    }
+  }
+  function smooth(a,b,t){t=Math.min(1,Math.max(0,(t-a)/(b-a)));return t*t*(3-2*t)}
+
+  function draw(now){
+    requestAnimationFrame(draw);
+    if(now-lastDraw<1000/30)return;
+    lastDraw=now;
+    if(vid.readyState<2)return;
+
+    // cover-fit the video into the cell grid
+    var vw=vid.videoWidth,vh=vid.videoHeight,ca=(cols*CW)/(rows*LH),va=vw/vh,sx=0,sy=0,sw=vw,sh=vh;
+    if(va>ca){sw=vh*ca;sx=(vw-sw)/2}else{sh=vw/ca;sy=(vh-sh)/2}
+    sctx.drawImage(vid,sx,sy,sw,sh,0,0,cols,rows);
+    var px=sctx.getImageData(0,0,cols,rows).data;
+
+    // auto-levels so dark and bright scenes both read
+    var n=cols*rows,lum=new Float32Array(n),lo=1,hi=0,sum=0;
+    for(var i=0,p=0;i<n;i++,p+=4){var l=(.2126*px[p]+.7152*px[p+1]+.0722*px[p+2])/255;lum[i]=l;sum+=l;if(l<lo)lo=l;if(l>hi)hi=l}
+    var span=Math.max(.15,hi-lo);
+    var blank=hi<.08;                           // fade-to-black: draw nothing rather than a wall of @
+
+    ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);
+    var dark=state.dark,cut=dark?.1:.38,moving=0,mcx=mouse.x/CW,mcy=mouse.y/LH;
+    var ink=[],hot=[];
+    var colorBuckets=state.color?{}:null;
+
+    for(var y=0;y<rows;y++){
+      for(var x=0;x<cols;x++){
+        var k=y*cols+x,l=(lum[k]-lo)/span;
+        var d=Math.abs(lum[k]-prev[k]);prev[k]=lum[k];
+        if(d>.09)moving++;
+        var t=dark?l:1-l;                       // light theme: shadows print as dense ink
+        var m=mask[k];
+        if(blank||(m<1&&noise[k]>m*1.15+.01))continue;   // sparse scatter toward the left
+        t=(t-cut)/(1-cut);                      // only the strongest shapes print
+        t=t*(.6+.4*m);
+        var dx=x-mcx,dy=(y-mcy)*LH/CW,near=dx*dx+dy*dy<170;
+        if(t<.04&&!near)continue;
+        if(t<.04)t=.08;
+        var ch=RAMP[Math.min(RAMP.length-1,Math.max(1,Math.floor(t*RAMP.length)))];
+        var X=x*CW,Y=y*LH;
+        if(near||d>.16){hot.push(ch,X,Y);continue}
+        if(colorBuckets){
+          var p4=k*4,q=((px[p4]>>5)<<6)|((px[p4+1]>>5)<<3)|(px[p4+2]>>5);
+          (colorBuckets[q]||(colorBuckets[q]=[])).push(ch,X,Y);
+        }else ink.push(ch,X,Y);
+      }
+    }
+    var j;
+    if(colorBuckets){
+      for(var q in colorBuckets){
+        var r=((q>>6)&7)*36,g=((q>>3)&7)*36,b=(q&7)*36,arr=colorBuckets[q];
+        ctx.fillStyle='rgb('+r+','+g+','+b+')';
+        for(j=0;j<arr.length;j+=3)ctx.fillText(arr[j],arr[j+1],arr[j+2]);
+      }
+    }else{
+      ctx.fillStyle=C.glyph;
+      for(j=0;j<ink.length;j+=3)ctx.fillText(ink[j],ink[j+1],ink[j+2]);
+    }
+    ctx.fillStyle=C.accent;
+    for(j=0;j<hot.length;j+=3)ctx.fillText(hot[j],hot[j+1],hot[j+2]);
+
+    // HUD
+    frames++;
+    if(now-fpsT>500){$('fps').textContent=Math.round(frames*1000/(now-fpsT));frames=0;fpsT=now}
+    var tcur=vid.currentTime,f=Math.floor(tcur*30);
+    $('tc').textContent=pad(Math.floor(tcur/60))+':'+pad(Math.floor(tcur%60))+':'+pad(f%30);
+    $('frame').textContent=String(f).padStart(6,'0');
+    $('luma').textContent=(sum/n).toFixed(2);
+    $('motion').textContent=(moving/n*100).toFixed(1).padStart(4,'0')+'%';
+  }
+  function pad(v){return String(v).padStart(2,'0')}
+
+  // ---------- player readouts ----------
+  var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').split('/').pop().replace(/_/g,' ').toUpperCase()||'LOCAL';
+  $('zone').textContent=tz;
+  function clock(){
+    var d=new Date(),h=d.getHours();
+    $('time').textContent=d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZoneName:'short'}).toUpperCase();
+    $('phase').textContent=h<5?'LATE NIGHT':h<12?'MORNING':h<17?'AFTERNOON':h<21?'EVENING':'NIGHT';
+  }
+  clock();setInterval(clock,1000);
+  try{
+    var gl=document.createElement('canvas').getContext('webgl'),ext=gl&&gl.getExtension('WEBGL_debug_renderer_info');
+    var g=ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):'';
+    g=(g.match(/(NVIDIA|AMD|Radeon|Intel|Apple|Adreno|Mali)[^,()]*/i)||[g||'UNKNOWN'])[0].replace(/\s+Direct3D.*$/i,'');
+    $('gpu').textContent=g.toUpperCase().slice(0,26);
+  }catch(e){$('gpu').textContent='UNKNOWN'}
+
+  // ---------- pointer ----------
+  var ret=$('reticle');
+  addEventListener('pointermove',function(e){
+    if(e.pointerType!=='mouse')return;
+    mouse.x=e.clientX;mouse.y=e.clientY;body.classList.add('has-pointer');
+    ret.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
+    $('mx').textContent=String(Math.round(e.clientX)).padStart(4,'0');
+    $('my').textContent=String(Math.round(e.clientY)).padStart(4,'0');
+  });
+  document.addEventListener('pointerleave',function(){mouse.x=mouse.y=-1e4;body.classList.remove('has-pointer')});
+  ret.style.left='0';ret.style.top='0';
+
+  // ---------- toggles ----------
+  var toast=$('toast'),tt;
+  function say(msg){toast.textContent=msg;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},1600)}
+  function btn(k){return document.querySelector('.keys [data-key="'+k+'"]')}
+  function setPressed(k,on){var b=btn(k);if(b)b.setAttribute('aria-pressed',on?'true':'false')}
+  var actions={
+    d:function(){state.dark=!state.dark;root.setAttribute('data-theme',state.dark?'dark':'light');setPressed('d',state.dark);
+      document.querySelector('meta[name=theme-color]').content=state.dark?'#0f0e0c':'#efe8d9';requestAnimationFrame(readColors)},
+    r:function(){state.crt=!state.crt;body.classList.toggle('is-crt',state.crt);setPressed('r',state.crt)},
+    c:function(){state.color=!state.color;setPressed('c',state.color)},
+    f:function(){state.focus=!state.focus;body.classList.toggle('is-focus',state.focus);setPressed('f',state.focus);buildMask()},
+    h:function(){
+      var url=location.href.split('#')[0];
+      if(navigator.share&&matchMedia('(pointer:coarse)').matches){navigator.share({title:'Shockles',url:url}).catch(function(){});return}
+      (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){say('Link copied')},function(){say(url)});
+    }
+  };
+  document.querySelectorAll('.keys button').forEach(function(b){b.addEventListener('click',function(){actions[b.dataset.key]()})});
+  addEventListener('keydown',function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    var a=actions[e.key.toLowerCase()];if(a){a();}
+    if(e.key==='Escape'&&state.focus)actions.f();
+  });
+
+  // ---------- go ----------
+  readColors();layout();
+  var rz;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(layout,120)});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)vid.pause();else if(!reduce)vid.play().catch(function(){})});
+  var START=9;                                  // skip the black intro
+  vid.addEventListener('loadedmetadata',function(){vid.currentTime=reduce?20:START;if(reduce)vid.pause()},{once:true});
+  vid.addEventListener('timeupdate',function(){if(vid.currentTime<START-.5)vid.currentTime=START});
+  if(!reduce)vid.play().catch(function(){});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
+  requestAnimationFrame(draw);
 })();
 </script>
 </body>
