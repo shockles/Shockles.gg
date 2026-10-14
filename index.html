@@ -401,7 +401,7 @@ GPU: <span id="gpu">----</span></div>
     var lum=null,lo=1,hi=0,sum=0,px=null;
     if(src){
       var ca=cols*CWd/(picRows*CHd),va=src.w/src.h,sx=0,sy=0,sw=src.w,sh=src.h;
-      if(va>ca){sw=src.h*ca;sx=(src.w-sw)/2}else{sh=src.w/ca;sy=(src.h-sh)/2}
+      if(va>ca){sw=src.h*ca;sx=src.w-sw}else{sh=src.w/ca;sy=src.h-sh}   // crop toward the bottom-right, where the gun is
       sctx.drawImage(src.el,sx,sy,sw,sh,0,0,cols,picRows);
       px=sctx.getImageData(0,0,cols,picRows).data;
       lum=new Float32Array(n);
