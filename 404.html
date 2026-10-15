@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Missed | Shockles</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#efe8d9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efe8d9;--ink:#171512;--ink-mut:#5d574c;--ink-faint:#8f877a;--glyph:#3a362f;--accent:#9d5df6;--rule:#cfc6b3;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;--display:'Michroma','Eurostile','Arial Black',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:12px;line-height:1.5;overflow:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+.logo{position:fixed;top:22px;left:28px;width:30px;height:30px;color:var(--ink);z-index:2}
+.logo svg{width:100%;height:100%;display:block;transition:transform .35s}
+.logo:hover svg{transform:rotate(45deg);color:var(--accent)}
+.hud{position:fixed;top:21vh;left:28px;z-index:2;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mut);white-space:pre;
+  text-shadow:0 0 2px var(--bg),0 0 5px var(--bg)}
+.hud b{color:var(--accent);font-weight:500}
+main{position:fixed;left:clamp(20px,6.5vw,110px);top:50%;transform:translateY(-46%);z-index:2;max-width:calc(100vw - 40px)}
+.kicker{font-weight:500;font-size:12px;letter-spacing:.32em;color:var(--accent);margin-bottom:14px;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(70px,14vw,190px);line-height:.9;display:flex;align-items:center}
+h1 .o{display:inline-block;width:.86em;height:.86em;margin:0 .03em;color:var(--accent);animation:miss 2.8s cubic-bezier(.22,1,.36,1) infinite}
+h1 .o svg{width:100%;height:100%;display:block}
+@keyframes miss{0%,100%{transform:translate(0,0)}20%{transform:translate(.06em,-.04em) rotate(8deg)}40%{transform:translate(-.05em,.03em) rotate(-6deg)}60%{transform:translate(0,0)}}
+.tag{margin-top:24px;font-size:clamp(12px,1.25vw,15px);font-weight:500;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 0 3px var(--bg),0 0 6px var(--bg)}
+.cta{margin-top:28px;display:inline-flex;align-items:center;gap:.6em;height:44px;padding:0 18px;background:var(--accent);color:#fff;font-size:13px;font-weight:500}
+.cta:hover{filter:brightness(1.1)}
+.cta .arr{transition:transform .2s}.cta:hover .arr{transform:translateX(3px)}
+.more{margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;font-size:11px}
+.more a{color:var(--ink-mut);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule)}
+.more a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+@media (max-width:700px){.hud{top:66px;left:20px}.logo{left:20px}main{left:20px;top:auto;bottom:60px;transform:none}}
+@media (prefers-reduced-motion:reduce){h1 .o{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+<a class="logo" href="/" aria-label="Shockles home"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="16" cy="16" r="9"/><path d="M16 1V6M16 26V31M1 16H6M26 16H31"/></svg></a>
+<div class="hud" aria-hidden="true">ERROR: <b>404</b>
+PATH: <span id="path">/</span>
+TARGET: NOT FOUND
+STATUS: WHIFFED</div>
+<main>
+  <div class="kicker">// Target not found</div>
+  <h1 aria-label="404">4<span class="o"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><path d="M16 1V6M16 26V31M1 16H6M26 16H31"/></svg></span>4</h1>
+  <p class="tag">Missed. That page isn't here.</p>
+  <a class="cta" href="/">Back to shockles.gg <span class="arr">→</span></a>
+  <nav class="more" aria-label="Elsewhere">
+    <a href="/lordscape/">LordScape wiki</a>
+    <a href="https://www.youtube.com/channel/UCfYUIDgKveNrsNTB3Amx53g" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.twitch.tv/theshockles" target="_blank" rel="noopener">Twitch</a>
+  </nav>
+</main>
+<script>
+(function(){
+  var p=location.pathname;document.getElementById('path').textContent=(p.length>28?p.slice(0,27)+'…':p).toUpperCase();
+  // one still from a random montage, printed as ASCII
+  var stills=['cutthroat','statues','4am','proplays','elporto'];
+  var img=new Image();img.src='/media/'+stills[(Math.random()*stills.length)|0]+'.jpg';
+  var c=document.getElementById('c'),x=c.getContext('2d'),RAMP=" .'`,:;-~=+*#%@";
+  function draw(){
+    if(!img.complete||!img.naturalWidth)return;
+    var dpr=Math.min(devicePixelRatio||1,2),W=innerWidth,H=innerHeight;
+    c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    var cs=getComputedStyle(document.documentElement),dark=false;
+    x.fillStyle=cs.getPropertyValue('--bg');x.fillRect(0,0,W,H);
+    var FS=W<600?9:11;x.font='500 '+FS+'px "JetBrains Mono", monospace';x.textBaseline='top';
+    var CW=x.measureText('M').width,LH=Math.round(FS*1.2),cols=Math.ceil(W/CW),rows=Math.ceil(H/LH);
+    var s=document.createElement('canvas');s.width=cols;s.height=rows;var sc=s.getContext('2d');
+    var ca=cols*CW/(rows*LH),va=img.naturalWidth/img.naturalHeight,sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
+    if(va>ca){sw=sh*ca;sx=img.naturalWidth-sw}else{sh=sw/ca;sy=img.naturalHeight-sh}
+    sc.drawImage(img,sx,sy,sw,sh,0,0,cols,rows);
+    var d=sc.getImageData(0,0,cols,rows).data,lo=1,hi=0,L=new Float32Array(cols*rows);
+    for(var i=0;i<L.length;i++){var l=(.2126*d[i*4]+.7152*d[i*4+1]+.0722*d[i*4+2])/255;L[i]=l;if(l<lo)lo=l;if(l>hi)hi=l}
+    var span=Math.max(.15,hi-lo),cut=dark?.1:.38,mobile=W<=700;
+    function sm(a,b,t){t=Math.min(1,Math.max(0,(t-a)/(b-a)));return t*t*(3-2*t)}
+    x.fillStyle=cs.getPropertyValue('--glyph');
+    for(var y=0;y<rows;y++)for(var X=0;X<cols;X++){
+      var k=y*cols+X,m=mobile?1-sm(.4,.6,y/rows):sm(.16,.5,X/cols);
+      if(m<1&&Math.random()>m*1.15+.01)continue;
+      var t=(L[k]-lo)/span;if(!dark)t=1-t;t=(t-cut)/(1-cut)*(.6+.4*m);if(t<.04)continue;
+      x.fillText(RAMP[Math.min(RAMP.length-1,Math.max(1,Math.floor(t*RAMP.length)))],X*CW,y*LH);
+    }
+  }
+  img.onload=function(){(document.fonts?document.fonts.ready:Promise.resolve()).then(draw)};
+  var rz;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(draw,120)});
+})();
+</script>
+</body>
+</html>
